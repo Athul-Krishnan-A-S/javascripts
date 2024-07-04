@@ -242,5 +242,17 @@ body {
         position: relative;
         left: 3rem;
     }
-    
+    .modal-text{
+        font-size: 1.5rem;
+    }
+    .head{
+        width: 50px;
+    }
+    .body{
+        width: 130px;
+    }
+    .legs{
+        position: relative;
+        top: 15px;
+    }
 }
