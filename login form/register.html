@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <section>
+        <img class="image-6" src="assets/image6.png">
+        <img class="image-1" src="assets/image1.png">
+        <img class="image-3" src="assets/image3.png">
+        <img class="image-2" src="assets/image2.png">
+        <div class="container">
+            <div class="login-form-container">
+                <div class="error-box">
+                    <p class="error-text" id="error_text"></p>
+                </div>
+                <form onsubmit="return saveData(event)" method="post">
+                    <p class="login-text">Register</p>
+                    <div>
+                        <label for="username">Username</label>
+                        <input class="text-field" type="text" name="username" id="username" placeholder="username"
+                            required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input class="text-field" type="email" name="email" id="email" placeholder="Username@email.com">
+                    </div>
+                    <div>
+                        <label for="date_of_birth">Date of Birth</label>
+                        <input class="text-field" type="date" name="date_of_birth" id="date_of_birth"
+                            placeholder="DD/MM/YYYY" required>
+                    </div>
+                    <div class="gender-container">
+                        <div>
+                            <label for="male">Male</label>
+                            <input class="text-field gender" type="radio" name="gender" id="male" value="male" required>
+                        </div>
+                        <div>
+                            <label for="female">Female</label>
+                            <input class="text-field gender" type="radio" name="gender" id="female" value="female">
+                        </div>
+                        <div>
+                            <label for="other">Other</label>
+                            <input class="text-field gender" type="radio" name="gender" id="other" value="other"
+                                required>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="contact">Contact Number</label>
+                        <input class="text-field" type="number" name="contact" id="contact" placeholder="000-0000-000"
+                            required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input class="text-field" type="password" name="password" id="password"
+                            placeholder="Password required">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input class="text-field" type="password" name="cpassword" id="cpassword"
+                            placeholder="Confirm Password" required>
+                    </div>
+                    <div>
+                        <button class="sign-in-btn" type="submit">Register</button>
+                    </div>
+                </form>
+                <div class="login-form-container-div">
+                    <p>or connect with</p>
+                    <div class="social-medias">
+                        <div><img src="assets/google.png"></div>
+                        <div><img src="assets/github.png"></div>
+                        <div><img src="assets/facebook.png"></div>
+                    </div>
+                    <div class="dont-have-acc">
+                        <p>Login Now !</p><a href="index.html">&nbsp;&nbsp;Login</a>
+                    </div>
+
+                </div>
+            </div>
+            <img class="image-8" src="assets/image8.png">
+            <img class="image-7" src="assets/image7.png">
+            <img class="image-5" src="assets/image5.png">
+            <img class="image-4" src="assets/image4.png">
+            <img class="image-9" src="assets/image9.png">
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Shedular</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="task-shedular-container">
+            <div class="task-shedular-heading">
+                <p>Task Shedular</p>
+            </div>
+            <div class="tasks-input-box">
+                <form method="post" onsubmit="return addTask(event)">
+                    <div>
+                        <label for="task">Task Name</label>
+                        <input id="task" type="text" placeholder="task">
+                    </div>
+                    <div>
+                        <label for="select_box">Priority</label>
+                        <select class="select-box" id="select_box">
+                            <option>Top Priority</option>
+                            <option>Average Priority</option>
+                            <option>Less Priority</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input id="date" type="date">
+                    </div>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+            <div class="tasks">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    -webkit-box-shadow: 0px 4px 33px -2px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 4px 33px -2px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 4px 33px -2px rgba(0, 0, 0, 0.45);
+
+}
+
+.two-cols {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.error-container {
+    justify-content: center;
+    display: flex;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.error-container p {
+    color: red;
+}
+
+.form-container div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-heading {
+    flex-direction: column;
+    gap: 0rem !important;
+}
+
+.col-1 {
+    display: flex;
+    flex: 1 1 30%;
+    height: 100%;
+    flex-direction: column;
+    background: linear-gradient(#007AFF 0, #0F70DA 100%);
+    justify-content: center;
+    place-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.col-2 {
+    display: flex;
+    flex: 1 1 50%;
+    background-color: white;
+    justify-content: center;
+    place-items: center;
+}
+
+.circle-shape-parent {
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.circle-shape {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: linear-gradient(#0F70DA 0, #007AFF 100%);
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 55%;
+    position: absolute;
+}
+
+.col-1 p {
+    color: white;
+    font-size: clamp(0.5rem, 4vh - 1rem, 1.5rem);
+    text-align: center;
+    /* width: 26rem; */
+    margin-bottom: 1rem;
+}
+
+.form-container {
+    width: 80%;
+    margin: 8% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.form-heading :nth-child(1) {
+    font-size: 2rem;
+}
+
+.form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3rem;
+}
+
+.form-fields div {
+    display: flex;
+    flex-direction: column;
+    width: 46.5%;
+}
+
+input {
+    width: 100%;
+    height: 3rem;
+    border: 2px solid rgba(128, 128, 128, 0.336);
+    outline: none;
+    padding: 5px;
+}
+
+.remember-me-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.remember-me-container div {
+    display: flex;
+    gap: 1rem;
+    place-items: center;
+    gap: 1rem;
+}
+
+.agreement-container div {
+    display: flex;
+    gap: 1rem;
+    place-items: center;
+    gap: 1rem;
+}
+
+.checkbox {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.rem-label {
+    float: right;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    width: 45%;
+    height: 3rem;
+    border-radius: 7px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    cursor: pointer;
+}
+
+.btn-google {
+    width: 45%;
+    height: 3rem;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    background-color: #000000;
+}
+
+.create {
+    background-color: #007AFF;
+}
+
+.google-icon {
+    width: 1.5rem;
+    /* margin-left: 2rem; */
+}
+
+.btn-google{
+    gap: 10rem !important;
+    display: flex;
+    justify-content: center !important;
+    place-items: center ;
+    text-align: center ;
+}
+
+@media (max-width:768px) {
+    .col-1 p {
+        width: 15rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .two-cols {
+        flex-direction: column;
+    }
+
+    body {
+        background-color: #007AFF !important;
+    }
+
+    .form-fields div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .rem-label,
+    .forget {
+        font-size: 0.9rem;
+        height: 2rem;
+    }
+
+    .remember-me-container div {
+        justify-content: center;
+        place-items: center;
+        display: flex;
+    }
+
+    .agreement-container div {
+        display: flex;
+        gap: 1rem;
+        place-items: center;
+        gap: 1rem;
+    }
+
+    .btn-google div p {
+        font-size: 0.9rem;
+    }
+
+    .google-icon {
+        width: 1.5rem;
+        position: relative !important;
+        display: block;
+    }
+}
+
+@media (max-width:1199px) {
+    .two-cols {
+        flex-direction: column;
+    }
+
+    body {
+        background-color: #007AFF !important;
+    }
+
+    .form-fields div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+
+@media (min-width:1200px) {
+    body {
+        background: linear-gradient(#007AFF 0, #0F70DA 100%) !important;
+    }
+
+    .col-2 {
+        height: 100% !important;
+    }
+
+    .btn-google div p:before {
+        font-size: 0.9rem;
+        content: "Sign in with ";
+    }
+
+    .form-fields {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    .form-fields div {
+        display: flex;
+        flex-direction: column;
+        width: 44%;
+    }
+}

@@ -1,0 +1,97 @@
+.image-container {
+    width: 80%;
+    margin: 0 auto;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    border-radius: 5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    height: 100vh;
+}
+
+
+.image-parent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-parent {
+    flex-direction: row;
+    gap: 2rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.prev {
+    animation: to-left 0.1s linear;
+}
+
+.after {
+    animation: from-right 0.2s linear;
+}
+
+.toggle-mode {
+    width: 20rem;
+    height: 5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.dark-mode {
+    background-color: rgba(0, 0, 0, 0.836);
+    color: white;
+}
+
+@keyframes to-left {
+    0% {
+        transform: translate(0%);
+    }
+
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+@keyframes from-right {
+    0% {
+        transform: translate(100%);
+    }
+
+    100% {
+        transform: translate(0%);
+    }
+}
+
+.options {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.dot {
+    background-color: rgb(175, 175, 175);
+    border-radius: 50%;
+    padding: 0.55rem;
+}
+
+.active {
+    background-color: black !important;
+}

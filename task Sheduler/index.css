@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-items: center;
+}
+.container{
+    width:80%;
+    height: 70%;
+    margin: auto;
+}
+.task-shedular-container{
+    width: 100%;
+}
+.task-shedular-heading{
+    width: 100%;
+    background-color: blue;
+    color: white;
+    height: 6rem;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+.task-shedular-heading p{
+    font-size: 3rem;
+    text-align: center;
+}
+form{
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+input{
+    width: 15rem;
+    height:2rem;
+}
+select{
+    width: 15rem;
+    height:2rem;
+}
+
+.tasks-div{
+    border: 2px solid green;
+}

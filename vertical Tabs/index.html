@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Tabs</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab "  onclick="toggleTabs(event,'london')">
+                <p>London</p>
+            </div>
+            <div class="tab " onclick="toggleTabs(event,'paris')">
+                <p>Paris</p>
+            </div>
+            <div class="tab " onclick="toggleTabs(event,'tokyo')">
+                <p>Tokyo</p>
+            </div>
+        </div>
+        <div class="contents">
+            <div id="london" class="content-london  content">
+                <p>London</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, at! Quod repellendus saepe placeat tempora. Libero deserunt perspiciatis sequi, nemo omnis molestias, exercitationem modi, dignissimos et atque unde dolores. Excepturi.</p>
+            </div>
+            <div id="paris" class="content-paris  content">
+                <p>Paris</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, at! Quod repellendus saepe placeat tempora. Libero deserunt perspiciatis sequi, nemo omnis molestias, exercitationem modi, dignissimos et atque unde dolores. Excepturi.</p>
+            </div>
+            <div id="tokyo" class="content-tokyo  content">
+                <p>Tokyo</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, at! Quod repellendus saepe placeat tempora. Libero deserunt perspiciatis sequi, nemo omnis molestias, exercitationem modi, dignissimos et atque unde dolores. Excepturi.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
