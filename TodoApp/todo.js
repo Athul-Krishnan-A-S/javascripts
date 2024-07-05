@@ -1,4 +1,5 @@
 let taskArray = [];
+let dueTasks;
 
 function getFormValues(event) {
     event.preventDefault();
@@ -20,7 +21,29 @@ function storeData(task, description, date) {
     displayData();
 }
 
+function checkDueDate(){
+    console.log("due check");
+    dueTasks = taskArray.filter((element) => {
+        const currentDate = new Date();
+        const elementDueDate = new Date(element.date);
+        if(elementDueDate < currentDate){
+            return element;
+        }  
+    })
+    taskArray.forEach((element,index) =>{
+        const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
+        tr.style.backgroundColor="white";
+    })
+    dueTasks.forEach((element,index) =>{
+        const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
+        tr.style.backgroundColor="red";
+    })
+   
+}
+checkDueDate();
+
 function displayData() {
+    console.clear();
     const table = document.querySelector('.tasks-table');
     table.innerHTML = '';
 
@@ -125,6 +148,7 @@ function displayData() {
         tr.appendChild(actionButtonsCell);
         table.appendChild(tr);
     });
+    checkDueDate();
 }
 
 function editTasks(index) {
@@ -147,6 +171,7 @@ function editTasks(index) {
         taskArray[index].description = description;
         taskArray[index].date = date;
     }
+    checkDueDate();
 }
 
 function removeTask(index) {
@@ -166,6 +191,7 @@ function markAsCompleted(index) {
     } else {
         completeBtn.style.backgroundColor = 'grey';
     }
+    checkDueDate();
 }
 
 function openModal() {
