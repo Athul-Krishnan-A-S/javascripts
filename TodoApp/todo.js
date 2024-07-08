@@ -213,9 +213,7 @@ function searchTasks(event){
     })
 
     if(elementfound.length > 0){
-        const index = taskArray.findIndex(task =>  task.task === elementfound[0].task &&
-            task.description === elementfound[0].description &&
-            task.date === elementfound[0].date);
+        const index = taskArray.findIndex(task =>  task.task === elementfound[0].task );
         console.log('index',index);
         if(index !== -1){
             const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
