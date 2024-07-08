@@ -218,21 +218,21 @@ function searchTasks(event){
         tr.style.backgroundColor='white';
     })
 
-    if(elementfound.length >= 0){
+    if(elementfound.length > 0){
         const index = taskArray.findIndex(task =>  task.task === elementfound[0].task );
         console.log('index',index);
         if(index !== -1){
             const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
             tr.style.backgroundColor="#EAE5E4";
             tr.scrollIntoView({behaviour:'smooth',block:'center'});
-        }else{
-            swal({
-                title: "Task not Found!",
-                text: "no tasks with this task name is found!",
-                icon: "warning",
-                button: "ok!",
-              });
         }
+    }else{
+        swal({
+            title: "Task not Found!",
+            text: "no tasks with this task name is found!",
+            icon: "warning",
+            button: "ok!",
+          });
     }
 }
 function markAllTasks(){
