@@ -1,5 +1,6 @@
 let taskArray = [];
 let dueTasks;
+let isRepeated = false;
 
 function getFormValues(event) {
     event.preventDefault();
@@ -7,18 +8,39 @@ function getFormValues(event) {
     const task = document.getElementById('task').value;
     const description = document.getElementById('description').value;
     const date = document.getElementById('date').value;
+    isRepeated = false;
 
     storeData(task, description, date);
 }
 
 function storeData(task, description, date) {
+    checkRepetition();
     const newTask = {
         task,
         description,
         date,
     };
-    taskArray.push(newTask);
-    displayData();
+
+    if (isRepeated === false){
+        taskArray.push(newTask);
+        displayData();
+    }else{
+        swal({
+            title: "Task already exists!",
+            text: "tasks with same name not allowed!",
+            icon: "warning",
+            button: "ok!",
+          });
+    }
+    
+}
+
+function checkRepetition(){
+    taskArray.forEach((item) => {
+        if (task.value == item.task){
+            isRepeated = true;
+        }
+    })
 }
 
 function checkDueDate(){
@@ -43,7 +65,7 @@ function checkDueDate(){
 checkDueDate();
 
 function displayData() {
-    console.clear();
+    // console.clear();
     const table = document.querySelector('.tasks-table');
     table.innerHTML = '';
 
