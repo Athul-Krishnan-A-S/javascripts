@@ -83,6 +83,7 @@ function displayData() {
         slNoInput.setAttribute("type", "number");
         slNoInput.setAttribute("value", index + 1);
         slNoInput.setAttribute("class", "editableTaskFields");
+        slNoInput.classList.add("serialNumber");
         slNoInput.setAttribute("disabled", "");
         slNoCell.appendChild(slNoInput);
         tr.appendChild(slNoCell);
@@ -154,10 +155,15 @@ function displayData() {
 function editTasks(index) {
     const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
     const inputFields = tr.querySelectorAll('.editableTaskFields');
+    const serialNumber = tr.querySelector('.serialNumber');
 
     inputFields.forEach(input => {
-        input.disabled = !input.disabled;
+        console.log(serialNumber)
+        if(serialNumber !== input ){
+            input.disabled = !input.disabled;
+        }
     });
+    
 
     const editTaskButton = tr.querySelector('.edit-btn');
     editTaskButton.textContent = editTaskButton.textContent === 'EDIT' ? 'SAVE' : 'EDIT';
