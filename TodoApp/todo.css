@@ -223,3 +223,30 @@ table{
     place-items: center;
     gap: 1rem;
 }
+
+@media (max-width:720px){
+    .logo{
+        font-size: 1.5rem;
+    }
+    .text-field{
+        width: 12rem;
+    }
+    .search-box{
+        width: 12rem;
+    }
+    .search-btn{
+        position: absolute;
+        right: 3rem;
+        background-color: transparent !important;
+    }
+    td,tr,th{
+        width: 15rem !important;
+    }
+    table{
+        width: 60rem;
+    }
+    .modal-container{
+        width: 90%;
+        height: 70%;
+    }
+}
