@@ -238,6 +238,7 @@ function searchTasks(event){
     taskArray.forEach((element,index) =>{
         const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
         tr.style.backgroundColor='white';
+        tr.style.border="none";
     })
 
     if(elementfound.length > 0){
@@ -245,7 +246,8 @@ function searchTasks(event){
         console.log('index',index);
         if(index !== -1){
             const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
-            tr.style.backgroundColor="#EAE5E4";
+            console.log(tr)
+            tr.style.border="5px solid red";
             tr.scrollIntoView({behaviour:'smooth',block:'center'});
         }
     }else{
