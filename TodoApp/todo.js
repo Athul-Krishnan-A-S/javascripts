@@ -234,6 +234,7 @@ function searchTasks(event){
             button: "ok!",
           });
     }
+    checkDueDate();
 }
 function markAllTasks(){
     console.log('clicked');
