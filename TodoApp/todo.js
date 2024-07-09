@@ -212,7 +212,7 @@ function removeTask(index) {
 }
 
 function markAsCompleted(index) {
-    const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index+1];
+    const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index];
     const completeBtn = tr.querySelector('.complete-btn');
     if (completeBtn.style.backgroundColor === 'grey') {
         completeBtn.style.backgroundColor = 'green';
