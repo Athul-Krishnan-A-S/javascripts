@@ -21,18 +21,7 @@ let playerImage = document.getElementsByClassName('player-img');
 
 
 function validate(playerChoosed){
-    flag = playerpoints >= 5 ? 'player' : 'play';
-    flag = computerPoints >= 5 ? 'computer' : 'play';
-
-    if(flag === 'player'){
-        modal[0].classList.remove('hidden');
-        modalText.textContent = "YOU WIN"
-    }else if(flag === 'computer'){
-        modal[0].classList.remove('hidden');
-        modalText.textContent = "YOU LOSE"
-    }
-   
-
+    
     if(playerChoosed && i === 0){
         playerImage[0].classList.remove('hidden');
         computerImage[0].classList.remove('hidden');
@@ -77,20 +66,44 @@ function validate(playerChoosed){
                 }
                 break;
         }
-        points[0].innerHTML = `<span class="red">YOU</span> : ${playerpoints} / 5 &nbsp; <span class="blue">COMPUTER</span>  : ${computerPoints} / 5 <br>DRAW : ${draw}`;
-        setTimeout(function(){
-            startTimer();
-        },2000)
-        i = 4;
-       
+        points[0].innerHTML = `<span class="red">YOU</span> : ${playerpoints} / 5 &nbsp; <span class="blue">COMPUTER</span>  : ${computerPoints} / 5 <br>DRAW : ${draw}`; 
+        if(playerpoints >= 5){
+            console.log('player win');
+            modal[0].classList.remove('hidden');
+            modalText[0].innerHTML = "YOU WIN"
+        }else if(computerPoints >= 5){
+            console.log('computer win');
+            modal[0].classList.remove('hidden');
+            modalText[0].textContent = "YOU LOSE"
+        } else{
+            setTimeout(function(){
+                startTimer();
+            },2000)
+            i = 4;
+        } 
     }else{
         computerPoints ++;
         points[0].innerHTML = `<span class="red">YOU</span>  : ${playerpoints} / 5 &nbsp; <span class="blue">COMPUTER</span>  : ${computerPoints} / 5 <br>DRAW : ${draw}`;
-        setTimeout(function(){
-            startTimer();
-        },2000)
-        i = 4;
+        if(playerpoints >= 5){
+            console.log('player win');
+            modal[0].classList.remove('hidden');
+            modalText[0].innerHTML = "YOU WIN"
+        }else if(computerPoints >= 5){
+            console.log('computer win');
+            modal[0].classList.remove('hidden');
+            modalText[0].textContent = "YOU LOSE"
+        } else{
+            setTimeout(function(){
+                startTimer();
+            },2000)
+            i = 4;
+        } 
+        
     }
+    console.log("player points : ",playerpoints);
+    console.log("computer points : ",computerPoints);
+
+
 }
 
 
@@ -103,7 +116,9 @@ function startTimer(){
     Array.from(btn).forEach(element => {
         element.style.backgroundColor = "";
     });
-    if(computerPoints <= 4){
+
+
+    if(computerPoints <= 5 && playerpoints <= 5){
         computerChoosed = array[Math.floor(Math.random()*array.length)];
         let countDown = setInterval(function(){
             if(i > 0){
