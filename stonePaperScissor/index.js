@@ -7,6 +7,7 @@ let draw = 0;
 let computerChoosed;
 let option;
 let flag = 'play';
+let clicked = false;
 
 const timer = document.getElementsByClassName('timer');
 const buttons = document.getElementsByClassName('buttons');
@@ -122,11 +123,15 @@ function btnClicked(value,i){
 }
 
 function newGame(){
-    modal[0].classList.add('hidden');
-    i = 3;
-    playerpoints = 0;
-    computerPoints = 0;
-    draw = 0;
-    points[0].innerHTML = `YOU : ${playerpoints} COMPUTER : ${computerPoints}<br>DRAW : ${draw}`;
-    startTimer();
+    if(clicked === false){
+        modal[0].classList.add('hidden');
+        i = 3;
+        playerpoints = 0;
+        computerPoints = 0;
+        draw = 0;
+        points[0].innerHTML = `YOU : ${playerpoints} COMPUTER : ${computerPoints}<br>DRAW : ${draw}`;
+        clicked = true;
+        startTimer();
+    }
+    
 }
