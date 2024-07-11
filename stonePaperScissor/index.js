@@ -34,6 +34,8 @@ function validate(playerChoosed){
    
 
     if(playerChoosed && i === 0){
+        playerImage[0].classList.remove('hidden');
+        computerImage[0].classList.remove('hidden');
         switch(playerChoosed){
             case 'stone':
                 playerImage[0].src = "assets/stone.png";
@@ -94,7 +96,9 @@ function validate(playerChoosed){
 
 function startTimer(){
     playerImage[0].src = "";
+    playerImage[0].classList.add('hidden');
     computerImage[0].src = "";
+    computerImage[0].classList.add('hidden');
 
     Array.from(btn).forEach(element => {
         element.style.backgroundColor = "";
@@ -115,6 +119,7 @@ function startTimer(){
             i--;
         },1000)
     }
+    clicked = false;
 }
 
 function btnClicked(value,i){
