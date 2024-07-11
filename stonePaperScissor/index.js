@@ -77,7 +77,7 @@ function validate(playerChoosed){
                 }
                 break;
         }
-        points[0].innerHTML = `YOU : ${playerpoints} COMPUTER : ${computerPoints}<br>DRAW : ${draw}`;
+        points[0].innerHTML = `<span class="red">YOU</span> : ${playerpoints} / 5 &nbsp; <span class="blue">COMPUTER</span>  : ${computerPoints} / 5 <br>DRAW : ${draw}`;
         setTimeout(function(){
             startTimer();
         },2000)
@@ -85,7 +85,7 @@ function validate(playerChoosed){
        
     }else{
         computerPoints ++;
-        points[0].innerHTML = `YOU : ${playerpoints} COMPUTER : ${computerPoints}<br>DRAW : ${draw}`;
+        points[0].innerHTML = `<span class="red">YOU</span>  : ${playerpoints} / 5 &nbsp; <span class="blue">COMPUTER</span>  : ${computerPoints} / 5 <br>DRAW : ${draw}`;
         setTimeout(function(){
             startTimer();
         },2000)
