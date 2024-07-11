@@ -120,11 +120,18 @@ function startTimer(){
         },1000)
     }
     clicked = false;
+    option = "";
+    playerChoosed = "";
 }
 
 function btnClicked(value,i){
-    option = value;
-    btn[i+1].style.backgroundColor = "orangered";
+    
+    if(i){
+        option = value;
+    }else{
+        option = "";
+    }
+    btn[i].style.backgroundColor = "orangered";
 }
 
 function newGame(){
