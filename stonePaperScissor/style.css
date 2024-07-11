@@ -4,6 +4,11 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -122,15 +127,17 @@ body {
 .new-game {
     width: 100%;
 }
+
 .new-game-modal {
     width: 50%;
 }
 
-.red{
+.red {
     color: red;
     font-weight: bold;
 }
-.blue{
+
+.blue {
     color: blue;
     font-weight: bold;
 }
