@@ -122,6 +122,9 @@ body {
 .new-game {
     width: 100%;
 }
+.new-game-modal {
+    width: 50%;
+}
 
 .red{
     color: red;
