@@ -21,8 +21,8 @@ let playerImage = document.getElementsByClassName('player-img');
 
 
 function validate(playerChoosed){
-    flag = playerpoints === 4 ? 'player' : 'play';
-    flag = computerPoints === 4 ? 'computer' : 'play';
+    flag = playerpoints >= 5 ? 'player' : 'play';
+    flag = computerPoints >= 5 ? 'computer' : 'play';
 
     if(flag === 'player'){
         modal[0].classList.remove('hidden');
