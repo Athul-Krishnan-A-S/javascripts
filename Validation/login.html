@@ -23,69 +23,73 @@
             </div>
             <div class="col-2">
                 <div class="form-container">
-                    <div>
+                    <div class="header-parent">
                         <div class="form-heading">
                             <p>Create Account</p>
                             <p>for buisiness bond or celebrity</p>
+                        </div>
+                        <div class="personal-data">
+                            <label for="checkbox">Enter Personal Data</label>
+                            <input type="checkbox" id="checkbox" onchange="togglePersonalDetails(event)">
                         </div>
                         <div class="error-container">
                             <p id="errorMsg" class="error-msg"></p>
                         </div>
                     </div>
 
-                    <form method="post" onsubmit="return validateForm(event);">
+                    <form method="post" onsubmit="return validateForm(event);" onchange="changedFields()">
                         <div class="form-fields">
                             <div>
-                                <label for="first_name">First Name</label>
+                                <label id="first-name-label" for="first_name">First Name</label>
                                 <input type="text" id="first_name" placeholder="first name">
                             </div>
                             <div>
                                 <label for="middle_name">Middle Name (optional)</label>
                                 <input type="text" id="middle_name" placeholder="middle_name">
                             </div>
-                            <div class="last-name-container">
-                                <label class="last-name" for="last_name">Last Name</label>
+                            <div  class="last-name-container">
+                                <label id="last-name-label" class="last-name" for="last_name">Last Name</label>
                                 <input type="text" id="last_name" placeholder="last name">
                             </div>
                             <div>
-                                <label for="address">Address</label>
+                                <label id="address-label" for="address">Address</label>
                                 <textarea type="text" id="address" placeholder="address"></textarea>
                             </div>
-                            <div>
-                                <label for="email">Email</label>
+                            <div class="optional hidden">
+                                <label for="email" id="mail">Email (optional)</label>
                                 <input type="email" id="email" placeholder="email">
                             </div>
                             <div>
-                                <label for="phone_number">Phone Number</label>
-                                <input type="number" id="phone_number" placeholder="phone_number">
+                                <label id="number-label" for="phone_number">Phone Number</label>
+                                <input type="number" id="phone_number" placeholder="phone_number" inputmode="numeric">
                             </div>
-                            <div>
-                                <label for="dob">Date of birth</label>
+                            <div class="optional hidden">
+                                <label for="dob" id="dateOfBirth">Date of birth (optional)</label>
                                 <input type="date" id="dob" placeholder="Date of birth">
                             </div>
-                            <div class="gender-container">
-                                <div>
+                            <div class="gender-container optional hidden">
+                                <div class="hidden">
                                     <label class="gender-label" for="male">Male</label>
                                     <input class="gender" type="radio" id="male" value="male" name="gender">
                                 </div>
-                                <div>
+                                <div class="hidden">
                                     <label class="gender-label" for="female">Female</label>
                                     <input class="gender" type="radio" id="female" value="female" name="gender">
                                 </div>
-                                <div>
+                                <div class="hidden">
                                     <label class="gender-label" for="other">Other</label>
                                     <input class="gender" type="radio" id="other" value="other" name="gender">
                                 </div>
                             </div>
                             <div>
-                                <label for="password">Password</label>
+                                <label id="password-label" for="password">Password</label>
                                 <div class="password-container">
                                     <input type="password" id="password" placeholder="Password">
                                     <button id="toggleBtn" class="eye" onclick="togglePassword(event)">SHOW</button>
                                 </div>
                             </div>
                             <div>
-                                <label for="confirm_password">Confirm Password</label>
+                                <label id="confirm-password-label" for="confirm_password">Confirm Password</label>
                                 <input type="password" id="confirm_password" placeholder="Confirm Password">
                             </div>
                         </div>

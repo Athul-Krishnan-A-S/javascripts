@@ -4,11 +4,37 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 body {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
+}
+
+.personal-data {
+    width: 50% !important;
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+}
+
+#checkbox {
+    width: 2rem !important;
 }
 
 .container {
@@ -20,24 +46,32 @@ body {
     box-shadow: 0px 4px 33px -2px rgba(0, 0, 0, 0.45);
 
 }
-.password-container{
+
+.hidden {
+    display: none !important;
+}
+
+.password-container {
     display: flex;
     flex-direction: row !important;
     width: 100% !important;
     border: 2px solid rgba(128, 128, 128, 0.336);
 }
-#password{
+
+#password {
     width: 80%;
     border: none;
     outline: none;
 }
-.eye{
+
+.eye {
     width: 20% !important;
     background-color: rgb(224, 224, 224);
     border: none;
     outline: none;
 
 }
+
 .two-cols {
     display: flex;
     width: 100%;
@@ -50,23 +84,26 @@ body {
     place-items: center;
     border-radius: 50%;
 }
-.gender-container{
+
+.gender-container {
     display: flex !important;
     flex-direction: row !important;
     width: 30% !important;
     margin: 0 auto;
-    
+
 }
-.gender-container div{
+
+.gender-container div {
     display: flex;
     flex-direction: column;
     width: 5rem !important;
 }
-.gender{
+
+.gender {
     width: 2rem;
 }
 
-textarea{
+textarea {
     height: 7rem;
 }
 
@@ -74,7 +111,7 @@ textarea{
     color: red;
 }
 
-.form-container div {
+.header-parent {
     display: flex;
     justify-content: space-between;
 }
@@ -241,12 +278,12 @@ a {
     /* margin-left: 2rem; */
 }
 
-.btn-google{
+.btn-google {
     gap: 10rem !important;
     display: flex;
     justify-content: center !important;
-    place-items: center ;
-    text-align: center ;
+    place-items: center;
+    text-align: center;
 }
 
 @media (max-width:768px) {
@@ -343,10 +380,12 @@ a {
         flex-direction: column;
         width: 44%;
     }
-    .last-name{
+
+    .last-name {
         margin-top: 3rem;
     }
-    .last-name-container{
+
+    .last-name-container {
         margin-bottom: 2rem;
     }
 }
