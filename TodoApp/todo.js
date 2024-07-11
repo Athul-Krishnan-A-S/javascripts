@@ -43,29 +43,28 @@ function checkRepetition(){
     })
 }
 
-function checkDueDate(){
-    console.log("due check");
+function checkDueDate() {
+
+    const rows = document.querySelector('.tasks-table').getElementsByTagName('tr');
+    for (let i = 1; i < rows.length; i++) {
+        rows[i].style.backgroundColor = "white";
+    }
+
+
     dueTasks = taskArray.filter((element) => {
         const currentDate = new Date();
         const elementDueDate = new Date(element.date);
-        if(elementDueDate < currentDate){
-            return element;
-        }  
-    })
-    taskArray.forEach((element,index) =>{
-        const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
-        tr.style.backgroundColor="white";
-    })
-    dueTasks.forEach((element,index) =>{
-        const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
-        tr.style.backgroundColor="red";
-    })
-   
+        return elementDueDate < currentDate;
+    });
+
+    dueTasks.forEach((element, index) => {
+        const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[taskArray.indexOf(element) + 1];
+        tr.style.backgroundColor = "red";
+    });
 }
 checkDueDate();
 
 function displayData() {
-    // console.clear();
     const table = document.querySelector('.tasks-table');
     table.innerHTML = '';
 
@@ -180,7 +179,6 @@ function editTasks(index) {
     const serialNumber = tr.querySelector('.serialNumber');
 
     inputFields.forEach(input => {
-        console.log(serialNumber)
         if(serialNumber !== input ){
             input.disabled = !input.disabled;
         }
@@ -212,7 +210,7 @@ function removeTask(index) {
 }
 
 function markAsCompleted(index) {
-    const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index];
+    const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index+1];
     const completeBtn = tr.querySelector('.complete-btn');
     if (completeBtn.style.backgroundColor === 'grey') {
         completeBtn.style.backgroundColor = 'green';
@@ -243,10 +241,8 @@ function searchTasks(event){
 
     if(elementfound.length > 0){
         const index = taskArray.findIndex(task =>  task.task === elementfound[0].task );
-        console.log('index',index);
         if(index !== -1){
             const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
-            console.log(tr)
             tr.style.border="5px solid red";
             tr.scrollIntoView({behaviour:'smooth',block:'center'});
         }
@@ -261,7 +257,6 @@ function searchTasks(event){
     checkDueDate();
 }
 function markAllTasks(){
-    console.log('clicked');
     taskArray.forEach((element,index) =>{
         const tr = document.querySelector('.tasks-table').getElementsByTagName('tr')[index + 1];
         const completeBtn = tr.querySelector('.complete-btn');
