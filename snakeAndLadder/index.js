@@ -546,7 +546,7 @@ function markMove(){
                 markMove();
             },1000);
         }else if(route[playerIndex] === '68'){
-            alert("You Win");
+            swal("YOU WIN ..!!");
         }
     }
     if(PlayerComputer){
@@ -608,7 +608,7 @@ function markMove(){
                 computerIndex = route.indexOf(`${computerX}${computerY}`);
             },1000);
         }else if(route[computerIndex] === '68'){
-            alert("You Lose");
+            swal("YOU LOSE ..!!");
         }
     }
     updateIndex();
