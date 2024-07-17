@@ -150,7 +150,7 @@ function rollDice(){
             rollBtn.classList.remove('hidden');
         }
         toggleTurn.innerText = `${turn.toUpperCase()}\'S TURN`;
-    },1000);
+    },300);
 
     makeMove(diceValue);
 }
@@ -224,6 +224,8 @@ function makeMove(diceValue){
                         playerX = movable[0];
                         playerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(playerIndex == 58){
@@ -255,6 +257,8 @@ function makeMove(diceValue){
                         playerX = movable[0];
                         playerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(playerIndex == 59){
@@ -279,6 +283,8 @@ function makeMove(diceValue){
                         playerX = movable[0];
                         playerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(playerIndex == 60){
@@ -295,6 +301,8 @@ function makeMove(diceValue){
                         let movable = route[playerIndex];
                         playerX = movable[0];
                         playerY = movable[1];
+                        markMove();
+                    }default:{
                         markMove();
                     }
                 }
@@ -313,6 +321,8 @@ function makeMove(diceValue){
                         playerX = movable[0];
                         playerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(playerIndex == 62){
@@ -322,6 +332,8 @@ function makeMove(diceValue){
                         let movable = route[playerIndex];
                         playerX = movable[0];
                         playerY = movable[1];
+                        markMove();
+                    }default:{
                         markMove();
                     }
                 }
@@ -372,6 +384,8 @@ function makeMove(diceValue){
                         computerX = movable[0];
                         computerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(computerIndex == 58){
@@ -403,6 +417,8 @@ function makeMove(diceValue){
                         computerX = movable[0];
                         computerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(computerIndex == 59){
@@ -427,6 +443,8 @@ function makeMove(diceValue){
                         computerX = movable[0];
                         computerY = movable[1];
                         markMove();
+                    }default:{
+                        markMove();
                     }
                 }
             }else if(computerIndex == 60){
@@ -443,6 +461,8 @@ function makeMove(diceValue){
                         let movable = route[computerIndex];
                         computerX = movable[0];
                         computerY = movable[1];
+                        markMove();
+                    }default:{
                         markMove();
                     }
                 }
@@ -462,6 +482,9 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }
+                    default:{
+                        markMove();
+                    }
                 }
             }else if(computerIndex == 62){
                 switch(diceValue){
@@ -470,6 +493,8 @@ function makeMove(diceValue){
                         let movable = route[computerIndex];
                         computerX = movable[0];
                         computerY = movable[1];
+                        markMove();
+                    }default:{
                         markMove();
                     }
                 }
@@ -481,137 +506,158 @@ function makeMove(diceValue){
 
 
 function markMove(){
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach((element) => {
-        element.innerHTML = '';
-    });
-    let PlayerBox = document.getElementById(`${playerX}${playerY}`);
-    let PlayerComputer = document.getElementById(`${computerX}${computerY}`);
-    if(PlayerBox){
-        PlayerBox.textContent === '🖥️' ? PlayerBox.textContent += '🧔‍♂️' : PlayerBox.textContent = '🧔‍♂️';
-        if(route[playerIndex] === '12'){
-            setTimeout(() => {
-                playerX = '0';
-                playerY = '3';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '36'){
-            setTimeout(() => {
-                playerX = '2';
-                playerY = '7';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '51'){
-            setTimeout(() => {
-                playerX = '3';
-                playerY = '2';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '66'){
-            setTimeout(() => {
-                playerX = '5';
-                playerY = '6';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '04'){
-            setTimeout(() => {
-                playerX = '1';
-                playerY = '5';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '21'){
-            setTimeout(() => {
-                playerX = '3';
-                playerY = '0';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '43'){
-            setTimeout(() => {
-                playerX = '5';
-                playerY = '4';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '38'){
-            setTimeout(() => {
-                playerX = '4';
-                playerY = '7';
-                playerIndex = route.indexOf(`${playerX}${playerY}`);
-                markMove();
-            },1000);
-        }else if(route[playerIndex] === '68'){
-            swal("YOU WIN ..!!");
+    setTimeout(() => {
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach((element) => {
+            element.innerHTML = '';
+        });
+        let PlayerBox = document.getElementById(`${playerX}${playerY}`);
+        let PlayerComputer = document.getElementById(`${computerX}${computerY}`);
+
+        if(PlayerBox){
+            PlayerBox.textContent === '🖥️' ? PlayerBox.textContent += '🧔‍♂️' : PlayerBox.textContent = '🧔‍♂️';
+            if(route[playerIndex] === '12'){
+                setTimeout(() => {
+                    playerX = '0';
+                    playerY = '3';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '36'){
+                setTimeout(() => {
+                    playerX = '2';
+                    playerY = '7';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '51'){
+                setTimeout(() => {
+                    playerX = '3';
+                    playerY = '2';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '66'){
+                setTimeout(() => {
+                    playerX = '5';
+                    playerY = '6';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '04'){
+                setTimeout(() => {
+                    playerX = '1';
+                    playerY = '5';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '21'){
+                setTimeout(() => {
+                    playerX = '3';
+                    playerY = '0';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '43'){
+                setTimeout(() => {
+                    playerX = '5';
+                    playerY = '4';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '38'){
+                setTimeout(() => {
+                    playerX = '4';
+                    playerY = '7';
+                    playerIndex = route.indexOf(`${playerX}${playerY}`);
+                    markMove();
+                },10);
+            }else if(route[playerIndex] === '68'){
+                swal({
+                    title: "YOU WIN",
+                    text: "PLAY NEW GAME",
+                    buttons: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                      window.location.reload();
+                    } 
+                  });
+            }
         }
-    }
-    if(PlayerComputer){
-        PlayerComputer.textContent === '🧔‍♂️' ? PlayerComputer.textContent += '🖥️' : PlayerComputer.textContent = '🖥️';
-        if(route[computerIndex] === '12'){
-            setTimeout(() => {
-                computerX = '0';
-                computerY = '3';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '36'){
-            setTimeout(() => {
-                computerX = '2';
-                computerY = '7';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '51'){
-            setTimeout(() => {
-                computerX = '3';
-                computerY = '2';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '66'){
-            setTimeout(() => {
-                computerX = '5';
-                computerY = '6';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '04'){
-            setTimeout(() => {
-                computerX = '1';
-                computerY = '5';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '21'){
-            setTimeout(() => {
-                computerX = '3';
-                computerY = '0';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '43'){
-            setTimeout(() => {
-                computerX = '5';
-                computerY = '4';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '38'){
-            setTimeout(() => {
-                computerX = '4';
-                computerY = '7';
-                markMove();
-                computerIndex = route.indexOf(`${computerX}${computerY}`);
-            },1000);
-        }else if(route[computerIndex] === '68'){
-            swal("YOU LOSE ..!!");
+        if(PlayerComputer){
+            PlayerComputer.textContent === '🧔‍♂️' ? PlayerComputer.textContent += '🖥️' : PlayerComputer.textContent = '🖥️';
+            if(route[computerIndex] === '12'){
+                setTimeout(() => {
+                    computerX = '0';
+                    computerY = '3';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '36'){
+                setTimeout(() => {
+                    computerX = '2';
+                    computerY = '7';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '51'){
+                setTimeout(() => {
+                    computerX = '3';
+                    computerY = '2';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '66'){
+                setTimeout(() => {
+                    computerX = '5';
+                    computerY = '6';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '04'){
+                setTimeout(() => {
+                    computerX = '1';
+                    computerY = '5';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '21'){
+                setTimeout(() => {
+                    computerX = '3';
+                    computerY = '0';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '43'){
+                setTimeout(() => {
+                    computerX = '5';
+                    computerY = '4';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '38'){
+                setTimeout(() => {
+                    computerX = '4';
+                    computerY = '7';
+                    markMove();
+                    computerIndex = route.indexOf(`${computerX}${computerY}`);
+                },10);
+            }else if(route[computerIndex] === '68'){
+                swal({
+                    title: "YOU LOSE",
+                    text: "PLAY NEW GAME",
+                    buttons: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                      window.location.reload();
+                    } 
+                  });
+            }
         }
-    }
-    updateIndex();
+        updateIndex();
+    },1000)
 }
 
 function updateIndex(){
