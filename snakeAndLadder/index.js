@@ -488,7 +488,7 @@ function markMove(){
     let PlayerBox = document.getElementById(`${playerX}${playerY}`);
     let PlayerComputer = document.getElementById(`${computerX}${computerY}`);
     if(PlayerBox){
-        PlayerBox.textContent === '🖥️' ? PlayerBox.textContent += '🚶‍♂️' : PlayerBox.textContent = '🚶‍♂️';
+        PlayerBox.textContent === '🖥️' ? PlayerBox.textContent += '🧔‍♂️' : PlayerBox.textContent = '🧔‍♂️';
         if(route[playerIndex] === '12'){
             setTimeout(() => {
                 playerX = '0';
@@ -550,7 +550,7 @@ function markMove(){
         }
     }
     if(PlayerComputer){
-        PlayerComputer.textContent === '🚶‍♂️' ? PlayerComputer.textContent += '🖥️' : PlayerComputer.textContent = '🖥️';
+        PlayerComputer.textContent === '🧔‍♂️' ? PlayerComputer.textContent += '🖥️' : PlayerComputer.textContent = '🖥️';
         if(route[computerIndex] === '12'){
             setTimeout(() => {
                 computerX = '0';
