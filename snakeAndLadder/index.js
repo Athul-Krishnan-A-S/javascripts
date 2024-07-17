@@ -225,7 +225,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(playerIndex == 58){
@@ -258,7 +258,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(playerIndex == 59){
@@ -284,7 +284,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(playerIndex == 60){
@@ -303,7 +303,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(playerIndex == 61){
@@ -322,7 +322,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(playerIndex == 62){
@@ -334,7 +334,7 @@ function makeMove(diceValue){
                         playerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }
@@ -385,7 +385,7 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(computerIndex == 58){
@@ -418,7 +418,7 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(computerIndex == 59){
@@ -444,7 +444,7 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(computerIndex == 60){
@@ -463,7 +463,7 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(computerIndex == 61){
@@ -483,7 +483,7 @@ function makeMove(diceValue){
                         markMove();
                     }
                     default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }else if(computerIndex == 62){
@@ -495,7 +495,7 @@ function makeMove(diceValue){
                         computerY = movable[1];
                         markMove();
                     }default:{
-                        markMove();
+                        updateIndex();
                     }
                 }
             }
