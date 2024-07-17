@@ -149,7 +149,9 @@ function rollDice(){
             const rollBtn = document.getElementById('rollBtn');
             rollBtn.classList.remove('hidden');
         }
-        toggleTurn.innerText = `${turn.toUpperCase()}\'S TURN`;
+        setTimeout(() => {
+            toggleTurn.innerText = `${turn.toUpperCase()}\'S TURN`;
+        },1000);
     },300);
 
     makeMove(diceValue);
